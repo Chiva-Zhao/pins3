@@ -81,12 +81,12 @@ public class Selection {
         merge(arr, lo, mid, hi);
     }
 
-    public static <T> void mDown2Upsort(Comparable<T>[] arr, int lo, int hi) {
+    public static <T> void msortBU(Comparable<T>[] arr, int lo, int hi) {
         if (lo >= hi)
             return;
         int N = arr.length;
         for (int sz = 1; sz < N; sz += sz)
-            for (int j = lo; j < N; j = j + 2 * sz)
+            for (int j = lo; j + sz < N; j = j + 2 * sz)
                 merge(arr, j, j + sz - 1, Math.min(j + 2 * sz - 1, N - 1));
     }
 
@@ -124,7 +124,7 @@ public class Selection {
         //		shell(arr);
         //		show(arr);
         //		msort(arr, 0, arr.length - 1);
-        mDown2Upsort(arr, 0, arr.length - 1);
+        msortBU(arr, 0, arr.length - 1);
         //		qsort(arr, 0, arr.length - 1);
         show(arr);
     }
