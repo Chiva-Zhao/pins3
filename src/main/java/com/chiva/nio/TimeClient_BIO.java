@@ -20,7 +20,7 @@ public class TimeClient_BIO {
         try {
             client = new Socket("127.0.0.1", 8080);
             out = new PrintWriter(client.getOutputStream(), true);
-            out.write("show me the time");
+            out.println("show me the time");
             System.out.println("发生服务器命令成功");
             BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
             System.out.println("服务器返回：" + reader.readLine());

@@ -29,7 +29,7 @@ public class HandlerClient implements Runnable {
                 System.out.println("接收到客户端请求：" + msg);
                 String back_msg = msg.equalsIgnoreCase("show me the time") ? new Date().toString() : "BAD CMD";
                 System.out.println("写出客户端：" + back_msg);
-                writer.write(back_msg);
+                writer.println(back_msg);
             }
             reader.close();
             writer.close();
