@@ -33,7 +33,8 @@ public class TimeClient {
                     .option(ChannelOption.TCP_NODELAY, true).handler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast(new TimeClientHandler());
+//                    ch.pipeline().addLast(new TimeClientHandler());
+                    ch.pipeline().addLast(new TimeClientHandler_AN());
                 }
             });
             ChannelFuture f = bootstrap.connect(host, port).sync();
