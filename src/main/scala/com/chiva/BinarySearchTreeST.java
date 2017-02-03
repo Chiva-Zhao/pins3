@@ -58,18 +58,31 @@ public class BinarySearchTreeST<K extends Comparable<K>, V> {
         return node;
     }
 
-    public V min() {
+    public K min() {
+        return min(root).key;
+    }
+
+    private Node min(Node node) {
+        if (node.left == null) return node;
+        return (node.left);
+    }
+
+    public K max() {
+        return max(root).key;
+    }
+
+    private Node max(Node node) {
+        if (node.right == null) return node;
+        return (node.right);
+    }
+
+    public K floor(K key) {
         return null;
     }
 
-    public V max() {
+    private Node floor(Node node,K key){
         return null;
     }
-
-    public V floor() {
-        return null;
-    }
-
     public V ceiling() {
         return null;
     }
